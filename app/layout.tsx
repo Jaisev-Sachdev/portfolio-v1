@@ -1,4 +1,4 @@
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { Inter, Syncopate } from "next/font/google";
 import "./globals.css";
