@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import { SITE_DATA } from "@/lib/data";
 import { useRef } from "react";
 
@@ -101,7 +101,7 @@ export default function Hero() {
             <div className="absolute bottom-20 right-12 hidden md:block z-20">
                 <div className="flex items-center gap-2 text-[10px] font-mono text-black/40 rotate-90 origin-right translate-x-8 animate-bounce">
                     <span>SCROLL TO DISCOVER</span>
-                    <ChevronRight className="w-3 h-3" />
+                    <ChevronDown className="w-3 h-3" />
                 </div>
             </div>
         </section>
