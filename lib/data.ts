@@ -17,10 +17,10 @@ export const SITE_DATA = {
     projects: [
         {
             id: 1,
-            title: "AI Detector",
-            description: "A machine learning project designed to detect AI-generated text. Leveraging advanced algorithms to distinguish between human and artificial writing styles.",
-            tags: ["Python", "Machine Learning", "AI"],
-            tech: ["Python", "Scikit-learn", "NLP"],
+            title: "AI vs Real Image Detector",
+            description: "This project is a Binary Image Classifier capable of distinguishing between Real Photographs and AI-Generated Images (e.g., Midjourney, Stable Diffusion).\n\nIt achieves ~86% accuracy using Transfer Learning on the MobileNetV2 CNN architecture.\n\n🚀 Features\nLightweight Model: Uses MobileNetV2 for fast inference, even on CPUs.\n\nWeb Interface: Includes a Gradio app (app.py) to drag-and-drop images for testing.\n\nTunable Sensitivity: The UI features a slider to adjust the detection threshold, helping to catch subtle AI fakes.\n\nTraining Script: Complete, readable code (train_model.py) to train your own version on custom datasets.",
+            tags: ["Python", "Computer Vision", "Deep Learning", "CNN", "Transfer Learning"],
+            tech: ["Python", "TensorFlow/Keras", "MobileNetV2", "Gradio", "OpenCV"],
             links: {
                 github: "https://github.com/Jaisev-Sachdev/ai-detector",
             },
