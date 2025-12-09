@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { SITE_DATA } from "@/lib/data";
 
 export default function About() {
@@ -12,11 +13,15 @@ export default function About() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="order-2 md:order-1 relative aspect-[4/5] bg-neutral-100 dark:bg-neutral-900 rounded-2xl overflow-hidden border border-black/5"
+                    className="order-2 md:order-1 relative aspect-[4/5] bg-neutral-100 dark:bg-neutral-900 rounded-2xl overflow-hidden border border-black/5 group"
                 >
-                    <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="font-mono text-xs text-black/30 uppercase tracking-widest">Image Placeholder</span>
-                    </div>
+                    <Image
+                        src={SITE_DATA.aboutImage}
+                        alt="Profile"
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                    />
                 </motion.div>
 
                 <motion.div

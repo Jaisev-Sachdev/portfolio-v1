@@ -1,6 +1,7 @@
 export const SITE_DATA = {
     name: "JAISEV",
     role: "{COMPUTER SCIENCE STUDENT @ NUS}",
+    aboutImage: "/profile.jpg",
     about: [
         "I am currently pursuing an undergraduate degree in Computer Science at the National University of Singapore (NUS).",
         "I recently completed the International Baccalaureate Diploma Programme (IBDP), scoring 41 points, placing me in the top 5% of students worldwide. My passion for technology started early: I topped my 80-student cohort in IGCSE Computer Science and achieved a 7 in IB Higher Level Computer Science.",
