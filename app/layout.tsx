@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { Inter, Syncopate } from "next/font/google";
 import "./globals.css";
@@ -32,6 +33,7 @@ export default function RootLayout({
                     <div className="absolute inset-0 bg-vignette opacity-80"></div>
                 </div>
                 {children}
+                <Analytics />
             </body>
         </html>
     );
