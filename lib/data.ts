@@ -17,37 +17,12 @@ export const SITE_DATA = {
     projects: [
         {
             id: 1,
-            title: "{PROJECT_TITLE_1}",
-            description: "{PROJECT_DESC_1}",
-            tags: ["React", "Next.js", "Tailwind"],
-            tech: ["TypeScript", "Framer Motion"],
+            title: "AI Detector",
+            description: "A machine learning project designed to detect AI-generated text. Leveraging advanced algorithms to distinguish between human and artificial writing styles.",
+            tags: ["Python", "Machine Learning", "AI"],
+            tech: ["Python", "Scikit-learn", "NLP"],
             links: {
-                demo: "https://example.com",
-                github: "https://github.com",
-            },
-            images: [],
-        },
-        {
-            id: 2,
-            title: "{PROJECT_TITLE_2}",
-            description: "{PROJECT_DESC_2}",
-            tags: ["AI", "Python", "TensorFlow"],
-            tech: ["PyTorch", "FastAPI"],
-            links: {
-                demo: "https://example.com",
-                github: "https://github.com",
-            },
-            images: [],
-        },
-        {
-            id: 3,
-            title: "{PROJECT_TITLE_3}",
-            description: "{PROJECT_DESC_3}",
-            tags: ["Mobile", "Flutter", "Dart"],
-            tech: ["Firebase", "Provider"],
-            links: {
-                demo: "https://example.com",
-                github: "https://github.com",
+                github: "https://github.com/Jaisev-Sachdev/ai-detector",
             },
             images: [],
         },

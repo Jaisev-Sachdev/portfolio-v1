@@ -62,7 +62,7 @@ export default function Hero() {
 
                     <p className="mb-10 max-w-2xl mx-auto">
                         <span className="font-mono text-sm md:text-base tracking-[0.2em] text-[#4169E1] uppercase bg-white/80 backdrop-blur-sm border border-blue-100/50 px-6 py-3 rounded-full shadow-sm inline-block">
-                            Computer Scientist & Future Machine Learning Engineer
+                            Computer Scientist & Aspiring Machine Learning Engineer
                         </span>
                     </p>
 
