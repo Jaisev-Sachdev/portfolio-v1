@@ -1,7 +1,8 @@
 # Futuristic Portfolio Website
 
 A sleek, reactive, and futuristic personal portfolio website built with Next.js 14, Tailwind CSS, and Framer Motion.
-View the final product on [jaisev.com](https://jaisev.com/)
+
+View the final product on: [jaisev.com](https://jaisev.com/)
 
 ## 🚀 Getting Started
 
