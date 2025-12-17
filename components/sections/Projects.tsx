@@ -54,14 +54,22 @@ const ProjectCard = ({ project, index }: { project: any, index: number }) => {
         >
             {/* Image Area - Minimal monochrome placeholder */}
             <div className="h-56 bg-gradient-to-br from-gray-100 to-gray-200 relative overflow-hidden group-hover:opacity-90 transition-opacity">
-                {/* Simulated content */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-10">
-                    <Layers size={48} className="text-black" />
-                </div>
+                {project.images && project.images[0] ? (
+                    <img
+                        src={project.images[0]}
+                        alt={project.title}
+                        className="w-full h-full object-cover object-top"
+                    />
+                ) : (
+                    /* Simulated content */
+                    <div className="absolute inset-0 flex items-center justify-center opacity-10">
+                        <Layers size={48} className="text-black" />
+                    </div>
+                )}
 
                 {/* Chips */}
                 <div className="absolute top-4 left-4 flex flex-wrap gap-2">
-                    {project.tags.slice(0, 3).map((tag: string) => (
+                    {project.tags.map((tag: string) => (
                         <span key={tag} className="text-[10px] font-bold font-mono bg-white/90 text-black px-2 py-1 rounded-md border border-black/5 shadow-sm">
                             {tag}
                         </span>

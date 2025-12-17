@@ -37,7 +37,7 @@ export const SITE_DATA = {
                 github: "https://github.com/Jaisev-Sachdev/prompt-pilot",
                 demo: "https://www.promptpilot.page/",
             },
-            images: [],
+            images: ["/projects/promptpilot.png"],
         },
     ],
     experience: [
