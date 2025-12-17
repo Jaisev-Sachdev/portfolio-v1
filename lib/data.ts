@@ -5,7 +5,7 @@ export const SITE_DATA = {
     about: [
         "I am currently pursuing an undergraduate degree in Computer Science at the National University of Singapore (NUS).",
         "I recently completed the International Baccalaureate Diploma Programme (IBDP), scoring 41 points, placing me in the top 5% of students worldwide. My passion for technology started early: I topped my 80-student cohort in IGCSE Computer Science and achieved a 7 in IB Higher Level Computer Science.",
-        "I’m particularly interested in cryptocurrency investing, fascinated by the potential of blockchain technology. I also have a strong interest in AI and cybersecurity, and enjoy learning about new security challenges and solutions and the potential for AI to address these challenges."
+        "I'm particularly interested in cryptocurrency investing, fascinated by the potential of blockchain technology. I also have a strong interest in AI and cybersecurity, and enjoy learning about new security challenges and solutions and the potential for AI to address these challenges."
     ],
     location: "SINGAPORE",
     email: "JAISEVSACHDEV06@GMAIL.COM",
@@ -24,6 +24,18 @@ export const SITE_DATA = {
             tech: ["Python", "TensorFlow/Keras", "MobileNetV2", "Gradio", "OpenCV"],
             links: {
                 github: "https://github.com/Jaisev-Sachdev/ai-detector",
+            },
+            images: [],
+        },
+        {
+            id: 2,
+            title: "PromptPilot",
+            description: "An advanced prompt engineering tool that uses predictive AI context and deterministic templates to craft high-quality, structured LLM prompts",
+            tags: ["AI", "LLM", "Prompt Engineering", "Next.js", "TypeScript"],
+            tech: ["Next.js", "TypeScript", "React", "Tailwind CSS"],
+            links: {
+                github: "https://github.com/Jaisev-Sachdev/prompt-pilot",
+                demo: "https://www.promptpilot.page/",
             },
             images: [],
         },
