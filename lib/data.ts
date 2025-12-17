@@ -25,7 +25,7 @@ export const SITE_DATA = {
             links: {
                 github: "https://github.com/Jaisev-Sachdev/ai-detector",
             },
-            images: [],
+            images: ["/projects/ai-detector.png"],
         },
         {
             id: 2,
