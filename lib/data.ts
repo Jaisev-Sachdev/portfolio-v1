@@ -31,7 +31,7 @@ export const SITE_DATA = {
             id: 2,
             title: "PromptPilot",
             description: "An advanced prompt engineering tool that uses predictive AI context and deterministic templates to craft high-quality, structured LLM prompts",
-            tags: ["AI", "LLM", "Prompt Engineering", "Next.js", "TypeScript"],
+            tags: ["AI", "LLM", "Prompt Engineering", "Next.js", "TypeScript", "React"],
             tech: ["Next.js", "TypeScript", "React", "Tailwind CSS"],
             links: {
                 github: "https://github.com/Jaisev-Sachdev/prompt-pilot",
