@@ -96,7 +96,7 @@ export default function Navbar() {
                     </div>
 
                     <a
-                        href="https://drive.google.com/file/d/1GlHIxM9Fakb2ceVWykeg2M623hM-7QTL/view?usp=sharing"
+                        href="https://drive.google.com/file/d/15ME2XBXpSrGpw0FLeLEPdrVsZvUUONrd/view?usp=sharing"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-2 px-5 py-2 text-xs font-bold tracking-wide uppercase bg-primary text-white rounded-full hover:bg-accent transition-colors duration-300 shadow-lg shadow-black/5"
