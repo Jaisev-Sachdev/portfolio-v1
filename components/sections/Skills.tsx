@@ -15,7 +15,7 @@ export default function Skills() {
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center mb-16">
                     <h2 className="font-display font-bold text-4xl md:text-5xl mb-4">TECHNICAL ARSENAL</h2>
-                    <p className="font-mono text-xs tracking-[0.3em] uppercase text-black/50">SKILLS</p>
+                    <p className="font-mono text-xs tracking-[0.3em] uppercase text-black/50">Skills</p>
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
