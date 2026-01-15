@@ -1,17 +1,65 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Copy, Mail, Send } from "lucide-react";
-import { useState } from "react";
+import { Copy, Mail, Send, Loader2, CheckCircle, XCircle } from "lucide-react";
+import { useState, FormEvent } from "react";
 import { SITE_DATA } from "@/lib/data";
+
+type SubmitStatus = "idle" | "loading" | "success" | "error";
 
 export default function Contact() {
     const [copied, setCopied] = useState(false);
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+    const [submitStatus, setSubmitStatus] = useState<SubmitStatus>("idle");
 
     const handleCopyEmail = () => {
         navigator.clipboard.writeText(SITE_DATA.email);
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
+    };
+
+    const handleSubmit = async (e: FormEvent) => {
+        e.preventDefault();
+        
+        if (!name.trim() || !email.trim()) {
+            return;
+        }
+
+        setSubmitStatus("loading");
+
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    access_key: "ce585707-fb2d-458d-ba62-6104090f3383",
+                    name: name.trim(),
+                    email: email.trim(),
+                    message: message.trim() || "(No message provided)",
+                    subject: `Portfolio Contact: ${name.trim()}`,
+                }),
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                setSubmitStatus("success");
+                setName("");
+                setEmail("");
+                setMessage("");
+                setTimeout(() => setSubmitStatus("idle"), 4000);
+            } else {
+                setSubmitStatus("error");
+                setTimeout(() => setSubmitStatus("idle"), 4000);
+            }
+        } catch {
+            setSubmitStatus("error");
+            setTimeout(() => setSubmitStatus("idle"), 4000);
+        }
     };
 
     return (
@@ -60,17 +108,66 @@ export default function Contact() {
                             </div>
                         </div>
 
-                        {/* Minimal Form */}
-                        <form className="space-y-4 text-left">
+                        {/* Contact Form */}
+                        <form onSubmit={handleSubmit} className="space-y-4 text-left">
                             <div className="grid grid-cols-2 gap-4">
-                                <input type="text" placeholder="NAME" className="w-full p-3 bg-background border border-black/5 rounded focus:outline-none focus:border-accent/50 text-sm font-mono transition-colors" />
-                                <input type="email" placeholder="EMAIL" className="w-full p-3 bg-background border border-black/5 rounded focus:outline-none focus:border-accent/50 text-sm font-mono transition-colors" />
+                                <input 
+                                    type="text" 
+                                    placeholder="NAME" 
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)}
+                                    required
+                                    className="w-full p-3 bg-background border border-black/5 rounded focus:outline-none focus:border-accent/50 text-sm font-mono transition-colors" 
+                                />
+                                <input 
+                                    type="email" 
+                                    placeholder="EMAIL" 
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    required
+                                    className="w-full p-3 bg-background border border-black/5 rounded focus:outline-none focus:border-accent/50 text-sm font-mono transition-colors" 
+                                />
                             </div>
-                            <textarea rows={4} placeholder="MESSAGE OPTIONAL..." className="w-full p-3 bg-background border border-black/5 rounded focus:outline-none focus:border-accent/50 text-sm font-mono transition-colors resize-none"></textarea>
+                            <textarea 
+                                rows={4} 
+                                placeholder="MESSAGE OPTIONAL..." 
+                                value={message}
+                                onChange={(e) => setMessage(e.target.value)}
+                                className="w-full p-3 bg-background border border-black/5 rounded focus:outline-none focus:border-accent/50 text-sm font-mono transition-colors resize-none"
+                            ></textarea>
 
-                            <button type="button" className="w-full py-4 bg-primary text-white font-bold text-sm tracking-widest uppercase rounded flex items-center justify-center gap-2 hover:bg-black transition-colors">
-                                <span>Transmit</span>
-                                <Send size={14} />
+                            <button 
+                                type="submit" 
+                                disabled={submitStatus === "loading"}
+                                className={`w-full py-4 font-bold text-sm tracking-widest uppercase rounded flex items-center justify-center gap-2 transition-all ${
+                                    submitStatus === "success" 
+                                        ? "bg-green-600 text-white" 
+                                        : submitStatus === "error"
+                                        ? "bg-red-600 text-white"
+                                        : "bg-primary text-white hover:bg-black"
+                                } ${submitStatus === "loading" ? "opacity-70 cursor-not-allowed" : ""}`}
+                            >
+                                {submitStatus === "loading" ? (
+                                    <>
+                                        <Loader2 size={14} className="animate-spin" />
+                                        <span>Sending...</span>
+                                    </>
+                                ) : submitStatus === "success" ? (
+                                    <>
+                                        <CheckCircle size={14} />
+                                        <span>Message Sent!</span>
+                                    </>
+                                ) : submitStatus === "error" ? (
+                                    <>
+                                        <XCircle size={14} />
+                                        <span>Failed - Try Again</span>
+                                    </>
+                                ) : (
+                                    <>
+                                        <span>Transmit</span>
+                                        <Send size={14} />
+                                    </>
+                                )}
                             </button>
                         </form>
                     </div>
