@@ -13,7 +13,7 @@ export default function About() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="order-2 md:order-1 relative aspect-[4/5] bg-neutral-100 dark:bg-neutral-900 rounded-2xl overflow-hidden border border-black/5 group max-w-xs md:max-w-sm mx-auto"
+                    className="order-2 md:order-1 relative w-full aspect-[4/5] bg-neutral-100 dark:bg-neutral-900 rounded-2xl overflow-hidden border border-black/5 group max-w-xs md:max-w-sm mx-auto"
                 >
                     <Image
                         src={SITE_DATA.aboutImage}
