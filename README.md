@@ -1,67 +1,31 @@
-# Futuristic Portfolio Website
+# jaisev.com
 
-A sleek, reactive, and futuristic personal portfolio website built with Next.js 14, Tailwind CSS, and Framer Motion.
+My personal site: a single page that lists what I have built next to what came of it.
 
-View the final product on: [jaisev.com](https://jaisev.com/)
+Live at [jaisev.com](https://jaisev.com/).
 
-## 🚀 Getting Started
+## How it works
 
-### Prerequisites
+- **Content** lives in [`lib/data.ts`](lib/data.ts). Edit that file to add or change an entry; the page renders from it.
+- **Layout** is [`app/page.tsx`](app/page.tsx), and all styling is plain CSS in [`app/globals.css`](app/globals.css).
+- **Assets** are in `public/`: the resume PDF and project screenshots.
 
-- Node.js 18+ installed
-- npm or yarn
+The page is static. It is built with Next.js 14 (App Router) and deployed on Vercel.
 
-### Installation
+## Run it locally
 
-1.  Navigate to the project directory:
-    ```bash
-    cd portfolio-v1
-    ```
+```sh
+npm install
+npm run dev
+```
 
-2.  Install dependencies:
-    ```bash
-    npm install
-    # or
-    yarn install
-    ```
+Then open http://localhost:3000. Before pushing, check that it builds and lints:
 
-3.  Start the development server:
-    ```bash
-    npm run dev
-    # or
-    yarn dev
-    ```
+```sh
+npm run build
+npm run lint
+```
 
-4.  Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## License
 
-## 🛠 customization
-
-### Personal Details & Projects
-All content is managed in `lib/data.ts`. You can easily update your:
-- Name, Role, Bio
-- Social Links
-- Projects (Title, Description, Tags, Links)
-- Skills
-- Experience
-
-### Styling
-- **Colors**: Edit CSS variables in `app/globals.css` (look for `--primary`, `--secondary`, `--accent`).
-- **Fonts**: Configured in `app/layout.tsx` and `tailwind.config.ts`.
-
-### 3D Elements
-The Hero section (`components/sections/Hero.tsx`) contains a placeholder for a Spline 3D scene.
-To add your own:
-1. Export your scene from Spline as a React component or URL.
-2. Install `@splinetool/react-spline` (already in package.json).
-3. Replace the placeholder in `Hero.tsx` with your `<Spline scene="..." />` component.
-
-## 📦 Deployment
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme).
-
-1. Push your code to GitHub.
-2. Import the repository on Vercel.
-3. It will automatically detect Next.js and deploy.
-
-## 📄 License
-MIT
+MIT. See [LICENSE](LICENSE).
