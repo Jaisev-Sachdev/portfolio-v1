@@ -286,13 +286,6 @@ a:focus-visible {
     color: var(--mute);
 }
 
-.entry .finding {
-    margin: 0;
-    font-size: 21px;
-    line-height: 1.3;
-    font-style: italic;
-}
-
 .mark {
     margin-top: 14px;
     position: relative;
